@@ -5,6 +5,7 @@ import dotenv from "dotenv"
 // import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
 import connectDB from "./db/index.js";
+import { app } from "./app.js";
 
 
 dotenv.config({
@@ -13,10 +14,11 @@ dotenv.config({
 
 
 connectDB()
-// console.log(process.env.PORT)
+    // console.log(process.env.PORT)
     .then(() => {
         app.listen(process.env.PORT || 8000, () => {
             console.log(`hello harsh this is port: ${process.env.PORT}`)
+            // console.log("hello harsh this is port")
         })
     })
     .catch((error) => {
